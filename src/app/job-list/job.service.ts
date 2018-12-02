@@ -18,4 +18,8 @@ export class JobService {
       map(response => response._embedded['jobs'])
     );
   }
+
+  addJob(job: Job): Observable<void> {
+    return this.http.post<void>('api/jobs', job);
+  }
 }

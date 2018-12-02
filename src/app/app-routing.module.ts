@@ -4,10 +4,14 @@ import { JobListComponent } from './job-list/job-list.component';
 import { CandidateListComponent } from './candidate-list/candidate-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { JobAddComponent } from './job-add/job-add.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
-  { path: 'jobs', component: JobListComponent },
+  { path: 'jobs', children: [
+    { path: '', component: JobListComponent },
+    { path: 'add', component: JobAddComponent },
+  ]},
   { path: 'candidates', component: CandidateListComponent },
   { path: '**', component: PageNotFoundComponent },
 ];

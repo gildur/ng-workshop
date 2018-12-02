@@ -14,6 +14,9 @@ import { JobAddComponent } from './job-add/job-add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenubarModule } from 'primeng/menubar';
 import { TableModule } from 'primeng/table';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { CalendarModule, InputTextareaModule, InputTextModule } from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -23,16 +26,22 @@ import { TableModule } from 'primeng/table';
     CandidateListComponent,
     PageNotFoundComponent,
     HomepageComponent,
-    FormatDatePipe
+    FormatDatePipe,
+    JobAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
 
     MenubarModule,
-    TableModule
+    TableModule,
+    ButtonModule,
+    InputTextModule,
+    InputTextareaModule,
+    CalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
