@@ -4,11 +4,19 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { JobListComponent } from './job-list/job-list.component';
+import { CandidateListComponent } from './candidate-list/candidate-list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    JobListComponent,
+    CandidateListComponent,
+    PageNotFoundComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
