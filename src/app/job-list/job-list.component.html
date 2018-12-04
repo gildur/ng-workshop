@@ -2,7 +2,7 @@
 
 <p-button routerLink="/jobs/add" label="Add" icon="pi pi-plus"></p-button>
 
-<p-table [value]="jobs">
+<p-table [value]="jobs" selectionMode="single" (onRowSelect)="selectJob($event.data)">
   <ng-template pTemplate="header">
     <tr>
       <th>Code</th>
@@ -11,7 +11,7 @@
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-job>
-    <tr>
+    <tr [pSelectableRow]="job">
       <td>{{job.code | uppercase}}</td>
       <td>{{job.name}}</td>
       <td>{{job.validFrom | formatDate}}</td>

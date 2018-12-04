@@ -17,6 +17,7 @@ import { TableModule } from 'primeng/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule, InputTextareaModule, InputTextModule, MessageModule } from 'primeng/primeng';
+import { JobDetailsComponent } from './job-details/job-details.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CalendarModule, InputTextareaModule, InputTextModule, MessageModule } f
     PageNotFoundComponent,
     HomepageComponent,
     FormatDatePipe,
-    JobAddComponent
+    JobAddComponent,
+    JobDetailsComponent
   ],
   imports: [
     BrowserModule,

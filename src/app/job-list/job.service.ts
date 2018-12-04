@@ -22,4 +22,8 @@ export class JobService {
   addJob(job: Job): Observable<void> {
     return this.http.post<void>('api/jobs', job);
   }
+
+  getJob(id: number): Observable<Job> {
+    return this.http.get<Job>(`api/jobs/${id}`);
+  }
 }
