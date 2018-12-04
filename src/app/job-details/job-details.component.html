@@ -6,3 +6,5 @@
   <div>Description:</div><div>{{job?.description}}</div>
   <div>Valid from:</div><div>{{job?.validFrom | formatDate}}</div>
 </div>
+
+<app-candidate-list *ngIf="job" [job]="job"></app-candidate-list>
