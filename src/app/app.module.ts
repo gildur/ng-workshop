@@ -16,7 +16,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { TableModule } from 'primeng/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
-import { CalendarModule, InputTextareaModule, InputTextModule } from 'primeng/primeng';
+import { CalendarModule, InputTextareaModule, InputTextModule, MessageModule } from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,8 @@ import { CalendarModule, InputTextareaModule, InputTextModule } from 'primeng/pr
     ButtonModule,
     InputTextModule,
     InputTextareaModule,
-    CalendarModule
+    CalendarModule,
+    MessageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

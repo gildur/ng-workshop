@@ -3,22 +3,27 @@
 <form [formGroup]="addForm" (submit)="addJob()">
 
   <div>
-  <input type="text" size="30" pInputText formControlName="code" placeholder="Code">
+    <input type="text" size="30" pInputText formControlName="code" placeholder="Code">
+    <p-message severity="error" text="Code is required" *ngIf="addForm.get('code').dirty && addForm.get('code').hasError('required')"></p-message>
+    <p-message severity="error" text="Code must have at least 3 characters" *ngIf="addForm.get('code').hasError('minlength')"></p-message>
   </div>
 
   <div>
-  <input type="text" size="30" pInputText formControlName="name" placeholder="Name">
+    <input type="text" size="30" pInputText formControlName="name" placeholder="Name">
+    <p-message severity="error" text="Name is required" *ngIf="addForm.get('name').dirty && addForm.get('name').hasError('required')"></p-message>
+    <p-message severity="error" text="Name must have at least 5 characters" *ngIf="addForm.get('name').hasError('minlength')"></p-message>
   </div>
 
   <div>
-  <textarea pInputTextarea formControlName="description" placeholder="Description"></textarea>
+    <textarea pInputTextarea formControlName="description" placeholder="Description"></textarea>
   </div>
 
   <div>
-  <p-calendar formControlName="validFrom" placeholder="Valid from"></p-calendar>
+    <p-calendar formControlName="validFrom" placeholder="Valid from"></p-calendar>
+    <p-message severity="error" text="Valid from is required" *ngIf="addForm.get('validFrom').dirty && addForm.get('validFrom').hasError('required')"></p-message>
   </div>
 
   <div>
-  <p-button type="submit" [disabled]="!addForm.valid" label="Submit"></p-button>
+    <p-button type="submit" [disabled]="!addForm.valid" label="Submit"></p-button>
   </div>
 </form>
