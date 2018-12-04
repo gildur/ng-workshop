@@ -1,7 +1,18 @@
-<ul>
-  <li *ngFor="let job of jobs">
-    {{job.code | uppercase}},
-    {{job.name}},
-    {{job.validFrom | formatDate}}
-  </li>
-</ul>
+<h1>Jobs</h1>
+
+<p-table [value]="jobs">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Valid from</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-job>
+    <tr>
+      <td>{{job.code | uppercase}}</td>
+      <td>{{job.name}}</td>
+      <td>{{job.validFrom | formatDate}}</td>
+    </tr>
+  </ng-template>
+</p-table>

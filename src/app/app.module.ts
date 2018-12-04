@@ -10,6 +10,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomepageComponent } from './homepage/homepage.component';
 import { FormatDatePipe } from './pipes/format-date.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { JobAddComponent } from './job-add/job-add.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenubarModule } from 'primeng/menubar';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+
+    MenubarModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
