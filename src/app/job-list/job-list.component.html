@@ -1,3 +1,7 @@
 <ul>
-  <li *ngFor="let job of jobs">{{job.code}}, {{job.name}}, {{job.validFrom}}</li>
+  <li *ngFor="let job of jobs">
+    {{job.code | uppercase}},
+    {{job.name}},
+    {{job.validFrom | formatDate}}
+  </li>
 </ul>

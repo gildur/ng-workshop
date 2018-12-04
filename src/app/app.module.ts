@@ -8,6 +8,7 @@ import { JobListComponent } from './job-list/job-list.component';
 import { CandidateListComponent } from './candidate-list/candidate-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { FormatDatePipe } from './pipes/format-date.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     JobListComponent,
     CandidateListComponent,
     PageNotFoundComponent,
-    HomepageComponent
+    HomepageComponent,
+    FormatDatePipe
   ],
   imports: [
     BrowserModule,
