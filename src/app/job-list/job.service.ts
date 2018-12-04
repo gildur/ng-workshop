@@ -14,16 +14,16 @@ export class JobService {
   }
 
   getJobs(): Observable<Job[]> {
-    return this.http.get<ApiResponse>('api/jobs').pipe(
+    return this.http.get<ApiResponse>('jobs').pipe(
       map(response => response._embedded['jobs'])
     );
   }
 
   addJob(job: Job): Observable<void> {
-    return this.http.post<void>('api/jobs', job);
+    return this.http.post<void>('jobs', job);
   }
 
   getJob(id: number): Observable<Job> {
-    return this.http.get<Job>(`api/jobs/${id}`);
+    return this.http.get<Job>(`jobs/${id}`);
   }
 }

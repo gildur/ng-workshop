@@ -9,7 +9,7 @@ import { CandidateListComponent } from './candidate-list/candidate-list.componen
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FormatDatePipe } from './pipes/format-date.pipe';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JobAddComponent } from './job-add/job-add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenubarModule } from 'primeng/menubar';
@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule, InputTextareaModule, InputTextModule, MessageModule } from 'primeng/primeng';
 import { JobDetailsComponent } from './job-details/job-details.component';
+import { BasePathInterceptor } from './http-interceptors/base-path-interceptor';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,9 @@ import { JobDetailsComponent } from './job-details/job-details.component';
     CalendarModule,
     MessageModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: BasePathInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
