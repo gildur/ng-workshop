@@ -6,6 +6,7 @@
     <input type="text" size="30" pInputText formControlName="code" placeholder="Code">
     <p-message severity="error" text="Code is required" *ngIf="addForm.get('code').dirty && addForm.get('code').hasError('required')"></p-message>
     <p-message severity="error" text="Code must have at least 3 characters" *ngIf="addForm.get('code').hasError('minlength')"></p-message>
+    <p-message severity="error" text="Code must be unique" *ngIf="addForm.get('code').hasError('taken')"></p-message>
   </div>
 
   <div>
