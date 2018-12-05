@@ -1,6 +1,12 @@
 <h1>Candidates</h1>
 
-<p-table [value]="candidates" [loading]="loading">
+<p-table [value]="candidates"
+         [loading]="loading"
+         [lazy]="true"
+         (onLazyLoad)="loadCandidates($event)"
+         [paginator]="true"
+         [rows]="PAGE_SIZE"
+         [totalRecords]="page?.totalElements">
   <ng-template pTemplate="header">
     <tr>
       <th>First name</th>

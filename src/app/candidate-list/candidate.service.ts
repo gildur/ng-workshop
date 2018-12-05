@@ -13,16 +13,16 @@ export class CandidateService {
 
   constructor(private readonly http: HttpClient) { }
 
-  getCandidates(job: Job): Observable<Candidate[]> {
+  getCandidates(job: Job, page: number, size: number): Observable<ApiResponse> {
     let url = 'candidates';
     let params = new HttpParams();
     if (job) {
       params = params.set('jobId', job.id.toString());
       url += '/search/findByJobId';
     }
+    params = params.set('page', page.toString());
+    params = params.set('size', size.toString());
     return this.http.get<ApiResponse>(url,
-      { params: params }).pipe(
-      map(response => response._embedded['candidates'])
-    );
+      { params: params });
   }
 }
