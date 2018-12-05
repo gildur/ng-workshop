@@ -15,9 +15,15 @@ export class CandidateListComponent implements OnInit {
 
   candidates: Candidate[];
 
+  loading: boolean;
+
   constructor(private readonly candidateService: CandidateService) { }
 
   ngOnInit() {
-    this.candidateService.getCandidates(this.job).subscribe(candidates => this.candidates = candidates);
+    this.loading = true;
+    this.candidateService.getCandidates(this.job).subscribe(candidates => {
+      this.candidates = candidates;
+      this.loading = false;
+    });
   }
 }
