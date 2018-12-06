@@ -1,5 +1,7 @@
 <h1>Candidates</h1>
 
+<input type="text" pInputText [formControl]="filter" placeholder="Filter">
+
 <p-table [value]="candidates"
          [loading]="loading"
          [lazy]="true"

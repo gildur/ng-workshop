@@ -4,6 +4,8 @@ import { CandidateService } from './candidate.service';
 import { Candidate } from './candidate';
 import { LazyLoadEvent } from 'primeng/api';
 import { Page } from '../api/page';
+import { FormControl } from '@angular/forms';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-candidate-list',
@@ -22,6 +24,8 @@ export class CandidateListComponent implements OnInit {
 
   loading: boolean = true;
 
+  filter = new FormControl('');
+
   constructor(private readonly candidateService: CandidateService) { }
 
   ngOnInit() {
@@ -35,5 +39,10 @@ export class CandidateListComponent implements OnInit {
         this.page = response.page;
         this.loading = false;
       });
+    this.filter.valueChanges.pipe(
+      debounceTime(500)
+    ).subscribe(value => {
+      console.log(value);
+    });
   }
 }
