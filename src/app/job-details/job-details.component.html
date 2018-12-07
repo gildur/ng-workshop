@@ -7,4 +7,6 @@
   <div>Valid from:</div><div>{{job?.validFrom | formatDate}}</div>
 </div>
 
-<app-candidate-list *ngIf="job" [job]="job"></app-candidate-list>
+<app-candidate-list *ngIf="job" [job]="job" [headerTemplate]="canidateHeader">
+  <ng-template #canidateHeader><h2>Candidates for job</h2></ng-template>
+</app-candidate-list>

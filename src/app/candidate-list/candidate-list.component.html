@@ -1,4 +1,4 @@
-<h1>Candidates</h1>
+<ng-container *ngTemplateOutlet="headerTemplate ? headerTemplate : defaultHeader"></ng-container>
 
 <input type="text" pInputText [formControl]="filter" placeholder="Filter">
 
@@ -22,3 +22,5 @@
     </tr>
   </ng-template>
 </p-table>
+
+<ng-template #defaultHeader><h1>Candidates</h1></ng-template>

@@ -26,6 +26,9 @@ export class CandidateListComponent implements OnInit {
 
   filter = new FormControl('');
 
+  @Input()
+  headerTemplate;
+
   constructor(private readonly candidateService: CandidateService) { }
 
   ngOnInit() {

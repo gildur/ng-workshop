@@ -19,7 +19,6 @@ import { ButtonModule } from 'primeng/button';
 import { CalendarModule, InputTextareaModule, InputTextModule, MessageModule } from 'primeng/primeng';
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { BasePathInterceptor } from './http-interceptors/base-path-interceptor';
-import { AddJobComponent } from './add-job/add-job.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +30,7 @@ import { AddJobComponent } from './add-job/add-job.component';
     HomepageComponent,
     FormatDatePipe,
     JobAddComponent,
-    JobDetailsComponent,
-    AddJobComponent
+    JobDetailsComponent
   ],
   imports: [
     BrowserModule,
