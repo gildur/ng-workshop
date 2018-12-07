@@ -19,6 +19,8 @@ import { ButtonModule } from 'primeng/button';
 import { CalendarModule, InputTextareaModule, InputTextModule, MessageModule } from 'primeng/primeng';
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { BasePathInterceptor } from './http-interceptors/base-path-interceptor';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { BasePathInterceptor } from './http-interceptors/base-path-interceptor';
     InputTextModule,
     InputTextareaModule,
     CalendarModule,
-    MessageModule
+    MessageModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasePathInterceptor, multi: true }

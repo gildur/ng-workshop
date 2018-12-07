@@ -1,0 +1,5 @@
+- więcej o RxJS
+- dopracowanie slajdów
+- wczorajsza część szybciej
+- dzisiejsza część wolniejsza
+- prac na jednym repo (przełączanie się na commity)
